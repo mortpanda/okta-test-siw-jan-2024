@@ -1,0 +1,11 @@
+<p-dock [model]="toolbarItems" position="left" id="mainToolbar">
+    <ng-template pTemplate="item" let-item>
+        <i [class]="item.icon" [style]="item.style"></i>
+    </ng-template>
+</p-dock>
+
+<p-dock [model]="toolbarItems" position="top" id="smallMainToolbar">
+    <ng-template pTemplate="item" let-item>
+        <i [class]="item.icon" [style]="item.style"></i>
+    </ng-template>
+</p-dock>

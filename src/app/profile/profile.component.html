@@ -1,0 +1,21 @@
+<div class="profileContainer" fxLayout="row wrap" fxLayoutAlign="center start">
+    <div class="profileBannerDiv" fxLayoutAlign="start start">
+        <img src="assets/img/okta_logo_black.jpg" class="profileBanner">
+    </div>
+
+    <div class="userInfo">
+       <img src="assets/img/customerIdentity.png" class="userIcon"> <a class="userName">{{strThisUser?.name}}</a>
+       
+    </div>
+    <div class="userInfo">
+        <!-- <p-button label="メールアドレスを変更する" (onClick)="getEmail()"></p-button> -->
+    </div>
+
+    <div class="tokenContainer" *ngIf="myTokens; else notShow">
+        <div class="tokenSubContainer">
+            <ngx-json-viewer [json]="colTokens" id="accessTokenJson" ></ngx-json-viewer>
+        </div>
+    </div>
+</div>
+
+<ng-template #notShow></ng-template>
