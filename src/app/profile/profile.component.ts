@@ -60,65 +60,65 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  apiRes;
-  newEmail;
-  async getEmail() {
+  // apiRes;
+  // newEmail;
+  // async getEmail() {
 
-    // this.apiRes = await "";
-    this.newEmail = {
-      "profile": {
-        "email": "kent.nagao+abcdef@okta.com"
-      },
-      "role": "PRIMARY",
-      "sendEmail": false,
-    }
+  //   // this.apiRes = await "";
+  //   this.newEmail = {
+  //     "profile": {
+  //       "email": "kent.nagao+abcdef@okta.com"
+  //     },
+  //     "role": "PRIMARY",
+  //     "sendEmail": false,
+  //   }
 
-    this.apiRes = await "";
-    this.apiRes = await this.ApiService.oktaApiCall("POST", this.OktaConfigService.strBaseURI + 'idp/myaccount/emails/', this.myAccessToken.accessToken, this.newEmail)
+  //   this.apiRes = await "";
+  //   this.apiRes = await this.ApiService.oktaApiCall("POST", this.OktaConfigService.strBaseURI + 'idp/myaccount/emails/', this.myAccessToken.accessToken, this.newEmail)
 
-    await console.log(this.apiRes)
+  //   await console.log(this.apiRes)
 
-    this.apiRes = await this.ApiService.oktaApiCall("GET", this.OktaConfigService.getEmailUri, this.myAccessToken.accessToken)
+  //   this.apiRes = await this.ApiService.oktaApiCall("GET", this.OktaConfigService.getEmailUri, this.myAccessToken.accessToken)
 
-    await console.log(this.apiRes)
-    localStorage.setItem('delMailId', JSON.stringify(this.apiRes[0].id))
-    localStorage.setItem('nextEmailId', JSON.stringify(this.apiRes[1].id))
-    localStorage.setItem('nextEmailChallenge', JSON.stringify(this.apiRes[1]._links.challenge.href))
+  //   await console.log(this.apiRes)
+  //   localStorage.setItem('delMailId', JSON.stringify(this.apiRes[0].id))
+  //   localStorage.setItem('nextEmailId', JSON.stringify(this.apiRes[1].id))
+  //   localStorage.setItem('nextEmailChallenge', JSON.stringify(this.apiRes[1]._links.challenge.href))
 
-    this.apiRes = await this.ApiService.oktaApiCall("POST", this.apiRes[1]._links.challenge.href, this.myAccessToken.accessToken)
+  //   this.apiRes = await this.ApiService.oktaApiCall("POST", this.apiRes[1]._links.challenge.href, this.myAccessToken.accessToken)
 
-    window.location.replace('/verify')
+  //   window.location.replace('/verify')
 
-    // this.apiRes = await this.ApiService.oktaApiCall("POST", this.OktaConfigService.getEmailUri + "/" + this.apiRes[0].id + "/challenge", this.myAccessToken.accessToken, this.primEmail)
-    await console.log(this.apiRes)
-
-
+  //   // this.apiRes = await this.ApiService.oktaApiCall("POST", this.OktaConfigService.getEmailUri + "/" + this.apiRes[0].id + "/challenge", this.myAccessToken.accessToken, this.primEmail)
+  //   await console.log(this.apiRes)
 
 
 
-    // this.apiRes = await "";
 
 
-    // this.apiRes = await this.OktaSDKAuthService.OktaSDKAuthClient.myaccount.getEmails();
+  //   // this.apiRes = await "";
 
 
-
-    // localStorage.setItem('emailId',JSON.stringify(this.apiRes[0]))
-
-
-
-    // // await console.log(this.apiRes)
-
-    // this.apiRes = await "";
+  //   // this.apiRes = await this.OktaSDKAuthService.OktaSDKAuthClient.myaccount.getEmails();
 
 
 
-    // this.apiRes = await this.ApiService.oktaApiCall("POST", this.OktaConfigService.strBaseURI + 'idp/myaccount/emails/' + this.apiRes[1].id +'/challenge', this.myAccessToken.accessToken, this.primEmail)
+  //   // localStorage.setItem('emailId',JSON.stringify(this.apiRes[0]))
 
 
 
-    // await localStorage.setItem('emailVerify',JSON.stringify(this.apiRes));
+  //   // // await console.log(this.apiRes)
 
-  }
+  //   // this.apiRes = await "";
+
+
+
+  //   // this.apiRes = await this.ApiService.oktaApiCall("POST", this.OktaConfigService.strBaseURI + 'idp/myaccount/emails/' + this.apiRes[1].id +'/challenge', this.myAccessToken.accessToken, this.primEmail)
+
+
+
+  //   // await localStorage.setItem('emailVerify',JSON.stringify(this.apiRes));
+
+  // }
 
 }
